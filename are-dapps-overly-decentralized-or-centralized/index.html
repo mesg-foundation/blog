@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWJ4KJV');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Are dApps overly decentralized (or centralized)?</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css%3Fv=37d9c7bd5c.css" />
+
+    <meta name="description" content="To find success, like being sufficiently decentralized yet offering a UI that users expect, dApps must utilize the strengths of multiple methods" />
+    <link rel="shortcut icon" href="../favicon.png" type="image/png" />
+    <link rel="canonical" href="index.html" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="amp/index.html" />
+    
+    <meta property="og:site_name" content="MESG" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Are dApps overly decentralized (or centralized)?" />
+    <meta property="og:description" content="There’s a ideal ratio for the optimal decentralized application, but very few dApps ever reach it." />
+    <meta property="og:url" content="https://blog.mesg.com/are-dapps-overly-decentralized-or-centralized/" />
+    <meta property="og:image" content="https://blog.mesg.com/content/images/2019/11/MaxPixel.net-Cryptocurrency-Virtual-Blockchain-Currency-Network-3277335--1-.png" />
+    <meta property="article:published_time" content="2018-05-30T06:01:00.000Z" />
+    <meta property="article:modified_time" content="2019-12-13T18:48:08.000Z" />
+    <meta property="article:tag" content="Tech" />
+    <meta property="article:tag" content="MESG" />
+    <meta property="article:tag" content="Ethereum" />
+    <meta property="article:tag" content="Blockchain" />
+    <meta property="article:tag" content="Development" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Are dApps overly decentralized (or centralized)?" />
+    <meta name="twitter:description" content="There’s a ideal ratio for the optimal decentralized application, but very few dApps ever reach it." />
+    <meta name="twitter:url" content="https://blog.mesg.com/are-dapps-overly-decentralized-or-centralized/" />
+    <meta name="twitter:image" content="https://blog.mesg.com/content/images/2019/11/MaxPixel.net-Cryptocurrency-Virtual-Blockchain-Currency-Network-3277335--1-.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Will Morgan" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Tech, MESG, Ethereum, Blockchain, Development" />
+    <meta name="twitter:site" content="@mesgfoundation" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "MESG",
+        "logo": "https://blog.mesg.com/content/images/2019/11/MESG-logo-purple.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Will Morgan",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://blog.mesg.com/content/images/2019/11/Will.jpg",
+            "width": 2000,
+            "height": 1500
+        },
+        "url": "https://blog.mesg.com/author/will/",
+        "sameAs": []
+    },
+    "headline": "Are dApps overly decentralized (or centralized)?",
+    "url": "https://blog.mesg.com/are-dapps-overly-decentralized-or-centralized/",
+    "datePublished": "2018-05-30T06:01:00.000Z",
+    "dateModified": "2019-12-13T18:48:08.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://blog.mesg.com/content/images/2019/11/MaxPixel.net-Cryptocurrency-Virtual-Blockchain-Currency-Network-3277335--1-.png",
+        "width": 1920,
+        "height": 1080
+    },
+    "keywords": "Tech, MESG, Ethereum, Blockchain, Development",
+    "description": "There’s a ideal ratio for the optimal decentralized application, but very few dApps ever reach it.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.mesg.com/"
+    }
+}
+    </script>
+
+    
+        <script src="https://js.stripe.com/v3/"></script>
+        <script defer src="../public/members.js%3Fv=37d9c7bd5c"></script>
+    
+    <meta name="generator" content="Ghost 3.1" />
+    <link rel="alternate" type="application/rss+xml" title="MESG" href="../rss/index.html" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117583862-7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117583862-7');
+</script>
+
+<style>
+.subscribe-email {
+	color: var(--midgrey);
+}
+    
+.cta-download {
+	width: 100%;
+}
+    
+.kg-image {
+	border-radius: 6px;
+	border: 1px solid rgba(0,0,0,.15);
+}
+</style>
+
+</head>
+
+<body class="post-template tag-tech tag-mesg tag-ethereum tag-blockchain tag-development">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWJ4KJV" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="site-wrapper">
+
+        
+
+<header class="site-header">
+    <div class="outer site-nav-main">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left-wrapper">
+        <div class="site-nav-left">
+                <a class="site-nav-logo" href="../index.html"><img src="../content/images/2019/11/MESG-logo-purple.png" alt="MESG" /></a>
+            <div class="site-nav-content">
+                    <ul class="nav" role="menu">
+    <li class="nav-announcements" role="menuitem"><a href="../tag/announcements/index.html">Announcements</a></li>
+    <li class="nav-community" role="menuitem"><a href="../tag/community/index.html">Community</a></li>
+    <li class="nav-tech" role="menuitem"><a href="../tag/tech/index.html">Tech</a></li>
+    <li class="nav-showcase" role="menuitem"><a href="../tag/showcase/index.html">Showcase</a></li>
+    <li class="nav-tutorials" role="menuitem"><a href="../tag/tutorials/index.html">Tutorials</a></li>
+    <li class="nav-mesg-com" role="menuitem"><a href="https://mesg.com/">MESG.com</a></li>
+</ul>
+
+                    <span class="nav-post-title ">Are dApps overly decentralized (or centralized)?</span>
+            </div>
+        </div>
+    </div>
+    <div class="site-nav-right">
+            <div class="social-links">
+                    <a class="social-link social-link-tw" href="https://twitter.com/mesgfoundation" title="Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+            </div>
+
+            <a class="subscribe-button" href="index.html#subscribe">Subscribe</a>
+    </div>
+</nav>
+    </div>
+</div></header>
+
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post tag-tech tag-mesg tag-ethereum tag-blockchain tag-development ">
+
+            <header class="post-full-header">
+
+                <section class="post-full-tags">
+                    <a href="../tag/tech/index.html">Tech</a>
+                </section>
+
+                <h1 class="post-full-title">Are dApps overly decentralized (or centralized)?</h1>
+
+                <p class="post-full-custom-excerpt">There’s a ideal ratio for the optimal decentralized application, but very few dApps ever reach it.</p>
+
+                <div class="post-full-byline">
+
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+                            <li class="author-list-item">
+
+                                <div class="author-card">
+                                    <img class="author-profile-image" src="../content/images/size/w100/2019/11/Will.jpg"
+                                        alt="Will Morgan" />
+                                    <div class="author-info">
+                                        <div class="bio">
+                                            <h2>Will Morgan</h2>
+                                            <p>Brand Manager @MESG</p>
+                                            <p><a href="../author/will/index.html">More posts</a> by Will Morgan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a href="../author/will/index.html" class="author-avatar">
+                                    <img class="author-profile-image" src="../content/images/size/w100/2019/11/Will.jpg"
+                                        alt="Will Morgan" />
+                                </a>
+
+                            </li>
+                        </ul>
+
+                        <section class="post-full-byline-meta">
+                            <h4 class="author-name"><a href="../author/will/index.html">Will Morgan</a></h4>
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date"
+                                    datetime="2018-05-30">30 May 2018</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span>
+                                    3 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            <figure class="post-full-image">
+                <img srcset="../content/images/size/w300/2019/11/MaxPixel.net-Cryptocurrency-Virtual-Blockchain-Currency-Network-3277335--1-.png 300w,
+                           ../content/images/size/w600/2019/11/MaxPixel.net-Cryptocurrency-Virtual-Blockchain-Currency-Network-3277335--1-.pngg 600w,
+                          ../content/images/size/w1000/2019/11/MaxPixel.net-Cryptocurrency-Virtual-Blockchain-Currency-Network-3277335--1-.pngng 1000w,
+                         ../content/images/size/w2000/2019/11/MaxPixel.net-Cryptocurrency-Virtual-Blockchain-Currency-Network-3277335--1-.pngpng 2000w" sizes="(max-width: 800px) 400px,
+                        (max-width: 1170px) 1170px,
+                            2000px" src="../content/images/size/w2000/2019/11/MaxPixel.net-Cryptocurrency-Virtual-Blockchain-Currency-Network-3277335--1-.png" alt="Are dApps overly decentralized (or centralized)?" />
+            </figure>
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <p>There’s a ideal ratio for the optimal decentralized application, but very few dApps ever reach it.</p><p>It’s a smart balance between decentralization and centralization that can make a dApp great. And in order to find success, like being sufficiently decentralized yet offering the UI tools that users expect, dApps must utilize the strengths of both methods in an optimal ratio.</p><p>It’s been a struggle for developers to get it right, but not due to a lack of expertise. There simply aren’t many available tools to help developers get blockchains to play nicely with web services, IoT devices or legacy software (...glad MESG is here to help).</p><h2 id="many-go-with-the-100-decentralized-route">Many go with the 100% decentralized route</h2><p>Ethereum smart contracts made dApps easy to build, but unfortunately, most that have been made aren’t functional (practically not at all). This is because when you build an application within a blockchain, you’re limited to the functionality of that blockchain.</p><p>It’d be like building a retail store locked deep inside an old underground missile silo. Sure, it’d be extremely secure, but also it’d be hard for customers or deliveries to get in or out.</p><p>If you build the back end and the UI of your dApp decentralized, it’s quite difficult to ever change or update it because the application is set within a blockchain, isolated from external technologies.</p><p>The sheer lack of connections to any external technologies quickly turn these 100% decentralized apps into UX nightmares. When is the last time you purchased something online and didn’t receive an email confirmation or receipt? The majority of users these days would think something went wrong or they’ve been scammed.</p><p>Without being able to easily connect to external technologies, users are left in the dark and are not guided through the process like they have been on all other apps and websites throughout the years. With technology as it currently stands, dApps need to be at least partially centralized in order to deliver a good user experience.</p><p>For the time being, our missile silo retail store at least needs a front door with a key.</p><h2 id="others-go-with-the-90-decentralized-route-">Others go with the 90% decentralized route.</h2><p>To solve this dApp connectedness problem, many create applications that are partially centralized. The centralized portion of dApps can be ran on a server, such as a classic cloud provider, designed to listen to particular events in order to expand your dApp’s functionalities.</p><p>Others prefer to connect the dApps’ UI to centralized services, but in this case, dApps are either built to be completely dependent on centralized services, or they include gigantic security holes (such as private API keys made publicly available in the source code).</p><p>If you apply this to our silo store analogy, it would be like having a showroom (plus the electrical supply and transformer) above ground, with the back of house siloed and protected below ground.</p><p>With a sizable portion of your application (possibly 10% or more) centralized, it opens it up to single points of failure and control by large entities, which are the exact reasons why we’ve been moving away from centralization in the first place.</p><p>Is a 90% decentralized application even worth the effort if it’s both vulnerable to the risks of centralization <strong><strong>and</strong></strong> susceptible to the drawbacks of decentralization?</p><h2 id="the-ideal-ratio">The ideal ratio</h2><p>In the majority of instances, there’s no reason why 10% of our applications should be centralized. 1% is a much more practical percentage.</p><p>There is finally a way for you to reach that 1%. MESG’s Engine, along with the network of interoperable services take down the walls around blockchain applications, allowing them to be easily modified, updated and connected to external technologies. </p><p>Now your DApp can connect to any technology, including other blockchains, in a decentralized way while also being able to keep some information (such as private keys or sensitive APIs) centralized.</p><p>For example, in the past, if you wanted to automatically airdrop tokens to investors on a certain date, then notify them via email, you would have to use a centralized portion of your application to do that, therefore making a large portion of the functionality of your application vulnerable to failure or attack.</p><p>Now, app builders can simply choose which parts of applications are centralized and which are decentralized. Ideally, this looks like making the functionality of your app decentralized, with only the most sensitive information centralized, allowing your DApp to be both feature-packed and secure.</p><p>On top of that, MESG modular services make modifications and updates easier than ever, as each service runs independently. You can replace or update any technology, or even easily switch out your dApp’s blockchain from Ethereum to EOS, for example, because it's just a service like any other.</p><p>MESG is revolutionizing the development process. Maintainability, modularity, and compatibility have never been so easy for those tough-to-reach technologies, allowing you, for the first time, to find and maintain the perfect ratio of decentralization for your dApp.</p><p>Check out<a href="https://mesg.tech/" rel="noopener"> https://mesg.tech</a> to get started building your solution on our open-source platform today.</p>
+                </div>
+            </section>
+
+            <section class="post-full-cta">
+                <a class="mesg-card-cta cta-purple"
+                    href="https://mesg.com/?utm_source=blog.mesg.com&utm_medium=cta&utm_campaign=website_cta"
+                    target="_blank">
+                    <img src="../assets/icons/external-link-icon.svg" alt="External link icon"
+                        class="icon-external-link" />
+                    <div class="icon-bg purple">
+                        <img src="../assets/icons/website-icon.svg" alt="MESG website icon" />
+                    </div>
+                    <div>
+                        <h2>MESG Website</h2>
+                        <p>Learn more about MESG</p>
+                    </div>
+                </a>
+                <a class="mesg-card-cta cta-blue"
+                    href="https://docs.mesg.com/?utm_source=blog.mesg.com&utm_medium=cta&utm_campaign=doc_cta"
+                    target="_blank">
+                    <img src="../assets/icons/external-link-icon.svg" alt="External link icon"
+                        class="icon-external-link" />
+                    <div class="icon-bg blue">
+                        <img src="../assets/icons/doc-icon.svg" alt="Documentation icon" />
+                    </div>
+                    <div>
+                        <h2>Documentation</h2>
+                        <p>Explore the tech & get started</p>
+                    </div>
+                </a>
+            </section>
+
+            <section class="post-full-follow">
+                <div class="follow-social">
+                    <h3>Community</h3>
+                    <p>Join us in building the bridges between legacy and emerging technologies.</p>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="https://github.com/mesg-foundation/" target="_blank">
+                                    <img src="../assets/icons/social/github.svg" alt="Github icon" /></a>
+                            </li>
+                            <li>
+                                <a href="https://forum.mesg.com/" target="_blank">
+                                    <img src="../assets/icons/social/forum.svg" alt="Forum icon" /></a>
+                            </li>
+                            <li>
+                                <a href="http://discord.mesg.com/" target="_blank">
+                                    <img src="../assets/icons/social/discord.svg" alt="Discord icon" /></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/mesgfoundation" target="_blank">
+                                    <img src="../assets/icons/social/twitter.svg" alt="Twitter icon" /></a>
+                            </li>
+                            <li>
+                                <a href="https://t.me/mesg_community" target="_blank">
+                                    <img src="../assets/icons/social/telegram.svg" alt="Telegram icon" /></a>
+                            </li>
+                            <li>
+                                <a href="http://links.mesg.com/baykBK" target="_blank">
+                                    <img src="../assets/icons/social/more.svg" alt="More icon" /></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <section class="subscribe-form">
+    <h3 class="subscribe-form-title">Subscribe to MESG</h3>
+    <p class="subscribe-form-description">Get the latest posts delivered right to your inbox</p>
+    <form data-members-form="subscribe">
+        <div class="form-group">
+            <input class="subscribe-email" data-members-email placeholder="youremail@example.com" autocomplete="false" />
+            <button class="button primary" type="submit">
+                <span class="button-content">Subscribe</span>
+                <span class="button-loader"><svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+    y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+    <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z" />
+    <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+C22.32,8.481,24.301,9.057,26.013,10.047z">
+        <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20"
+            dur="0.5s" repeatCount="indefinite" />
+    </path>
+</svg></span>
+            </button>
+        </div>
+        <div class="message-success">
+            <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
+        </div>
+        <div class="message-error">
+            Please enter a valid email address!
+        </div>
+    </form>
+</section>            </section>
+
+
+            <section class="post-full-comments">
+                <div id='discourse-comments'></div>
+
+                <script type="text/javascript">
+                    DiscourseEmbed = {
+                        discourseUrl: 'https://forum.mesg.com/',
+                        discourseEmbedUrl: 'https://blog.mesg.com/are-dapps-overly-decentralized-or-centralized/'
+                    };
+
+                    (function () {
+                        var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+                        d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+                    })();
+                </script>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            <article class="read-next-card">
+                <header class="read-next-card-header">
+                    <h3><span>More in</span> <a href="../tag/tech/index.html">Tech</a></h3>
+                </header>
+                <div class="read-next-card-content">
+                    <ul>
+                        <li>
+                            <h4><a href="../what-is-liteflow/index.html">Build Easier, Ship Faster: What is Liteflow?</a></h4>
+                            <div class="read-next-card-meta">
+                                <p><time datetime="2020-04-30">30 Apr 2020</time> –
+                                    2 min read</p>
+                            </div>
+                        </li>
+                        <li>
+                            <h4><a href="../a-refreshing-development-experience-awaits/index.html">A Refreshing Development Experience Awaits...</a></h4>
+                            <div class="read-next-card-meta">
+                                <p><time datetime="2020-04-24">24 Apr 2020</time> –
+                                    1 min read</p>
+                            </div>
+                        </li>
+                        <li>
+                            <h4><a href="../aragon-dao-integration-milestone-2/index.html">Connecting Aragon DAOs to webhooks</a></h4>
+                            <div class="read-next-card-meta">
+                                <p><time datetime="2020-03-06">6 Mar 2020</time> –
+                                    2 min read</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <footer class="read-next-card-footer">
+                    <a href="../tag/tech/index.html">See all 25 posts
+                        →</a>
+                </footer>
+            </article>
+
+            <article class="post-card post tag-development tag-mesg tag-announcements tag-blockchain tag-tech ">
+
+    <a class="post-card-image-link" href="../mesg-core-v0-1-launch-a-new-era/index.html">
+        <img class="post-card-image"
+            srcset="../content/images/size/w300/2019/11/1_J5hhGDXDebFCzEbkfSfZEQ.jpeg 300w,
+                   ../content/images/size/w600/2019/11/1_J5hhGDXDebFCzEbkfSfZEQ.jpeg 600w,
+                  ../content/images/size/w1000/2019/11/1_J5hhGDXDebFCzEbkfSfZEQ.jpeg 1000w,
+                 ../content/images/size/w2000/2019/11/1_J5hhGDXDebFCzEbkfSfZEQ.jpeg 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            src="../content/images/size/w600/2019/11/1_J5hhGDXDebFCzEbkfSfZEQ.jpeg"
+            alt="MESG Engine v0.1 Launch: A New Era"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="../mesg-core-v0-1-launch-a-new-era/index.html">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Development</div>
+                <h2 class="post-card-title">MESG Engine v0.1 Launch: A New Era</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>We’re currently in the first stage of our deployment and are proud to announce that Version 0.1 of our software, Engine, has launched and is available for use now.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Will Morgan
+                    </div>
+            
+                    <a href="../author/will/index.html" class="static-avatar">
+                        <img class="author-profile-image" src="../content/images/size/w100/2019/11/Will.jpg" alt="Will Morgan" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="../author/will/index.html">Will Morgan</a></span>
+                <span class="post-card-byline-date"><time datetime="2018-07-04">4 Jul 2018</time> <span class="bull">&bull;</span> 3 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+            <article class="post-card post tag-tech tag-mesg tag-blockchain tag-development tag-ethereum ">
+
+    <a class="post-card-image-link" href="../name-a-dapp-with-a-great-ux-well-wait/index.html">
+        <img class="post-card-image"
+            srcset="../content/images/size/w300/2019/11/1_7oLj3wysVYEAQ3vFryMyBA.jpeg 300w,
+                   ../content/images/size/w600/2019/11/1_7oLj3wysVYEAQ3vFryMyBA.jpeg 600w,
+                  ../content/images/size/w1000/2019/11/1_7oLj3wysVYEAQ3vFryMyBA.jpeg 1000w,
+                 ../content/images/size/w2000/2019/11/1_7oLj3wysVYEAQ3vFryMyBA.jpeg 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            src="../content/images/size/w600/2019/11/1_7oLj3wysVYEAQ3vFryMyBA.jpeg"
+            alt="Name a dApp with a great UX (I&#x27;ll wait...)"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="../name-a-dapp-with-a-great-ux-well-wait/index.html">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Tech</div>
+                <h2 class="post-card-title">Name a dApp with a great UX (I&#x27;ll wait...)</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>dApp user experience is at best an afterthought, at worst, non-existent.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Will Morgan
+                    </div>
+            
+                    <a href="../author/will/index.html" class="static-avatar">
+                        <img class="author-profile-image" src="../content/images/size/w100/2019/11/Will.jpg" alt="Will Morgan" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="../author/will/index.html">Will Morgan</a></span>
+                <span class="post-card-byline-date"><time datetime="2018-05-19">19 May 2018</time> <span class="bull">&bull;</span> 2 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+        </div>
+    </div>
+</aside>
+
+
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="../index.html">MESG</a> &copy; 2020
+                </section>
+                <nav class="site-footer-nav">
+                    <a href="../index.html">Latest Posts</a>
+                    
+                    <a href="https://twitter.com/mesgfoundation" target="_blank"
+                        rel="noopener">Twitter</a>
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <div class="subscribe-success-message">
+        <a class="subscribe-close" href="javascript:;"></a>
+        You've successfully subscribed to MESG!
+    </div>
+
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-close" href="index.html#"></a>
+        <div class="subscribe-overlay-content">
+            <img class="subscribe-overlay-logo" src="../content/images/2019/11/MESG-logo-purple.png" alt="MESG" />
+            <div class="subscribe-form">
+                <h1 class="subscribe-overlay-title">Subscribe to MESG</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered
+                    straight to your inbox</p>
+                <form data-members-form="subscribe">
+                    <div class="form-group">
+                        <input class="subscribe-email" data-members-email placeholder="youremail@example.com"
+                            autocomplete="false" />
+                        <button class="button primary" type="submit">
+                            <span class="button-content">Subscribe</span>
+                            <span class="button-loader"><svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+    y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+    <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z" />
+    <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+C22.32,8.481,24.301,9.057,26.013,10.047z">
+        <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20"
+            dur="0.5s" repeatCount="indefinite" />
+    </path>
+</svg></span>
+                        </button>
+                    </div>
+                    <div class="message-success">
+                        <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
+                    </div>
+                    <div class="message-error">
+                        Please enter a valid email address!
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+    <script src="../assets/built/casper.js%3Fv=37d9c7bd5c"></script>
+
+    <script>
+        // Parse the URL parameter
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Give the parameter a variable name
+        var action = getParameterByName('action');
+
+        $(document).ready(function () {
+            if (action == 'subscribe') {
+                $('body').addClass("subscribe-success");
+            }
+
+            $('.subscribe-success-message .subscribe-close').click(function () {
+                $('.subscribe-success-message').addClass('close');
+            });
+
+            // Reset form on opening subscrion overlay
+            $('.subscribe-button').click(function () {
+                $('.subscribe-overlay form').removeClass();
+                $('.subscribe-email').val('');
+            });
+        });
+    </script>
+
+    <script>
+    $(document).ready(function () {
+        // FitVids - start
+        var $postContent = $(".post-full-content");
+        $postContent.fitVids();
+        // FitVids - end
+
+        // Replace nav with title on scroll - start
+        Casper.stickyNavTitle({
+            navSelector: '.site-nav-main',
+            titleSelector: '.post-full-title',
+            activeClass: 'nav-post-title-active'
+        });
+        // Replace nav with title on scroll - end
+
+        // Hover on avatar
+        var hoverTimeout;
+        $('.author-list-item').hover(function () {
+            var $this = $(this);
+
+            clearTimeout(hoverTimeout);
+
+            $('.author-card').removeClass('hovered');
+            $(this).children('.author-card').addClass('hovered');
+
+        }, function () {
+            var $this = $(this);
+
+            hoverTimeout = setTimeout(function () {
+                $this.children('.author-card').removeClass('hovered');
+            }, 800);
+        });
+    });
+</script>
+
+
+    
+
+</body>
+
+</html>

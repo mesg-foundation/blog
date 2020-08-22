@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWJ4KJV');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Tutorial: Create your own decentralized network</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css%3Fv=37d9c7bd5c.css" />
+
+    <meta name="description" content="MESG Engine v0.16 allows you to create a unique decentralized network built to distribute interoperable services and apps." />
+    <link rel="shortcut icon" href="../favicon.png" type="image/png" />
+    <link rel="canonical" href="index.html" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="amp/index.html" />
+    
+    <meta property="og:site_name" content="MESG" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Tutorial: Create your own decentralized network" />
+    <meta property="og:description" content="With the latest release of the MESG Engine, you can connect multiple Engines running on different computers together on a network and share services!" />
+    <meta property="og:url" content="https://blog.mesg.com/tutorial-create-a-network-with-multiple-engines/" />
+    <meta property="og:image" content="https://blog.mesg.com/content/images/2019/11/1_yuz-Kpv0sZHrliwWBpd1qg--1--2.gif" />
+    <meta property="article:published_time" content="2019-10-30T02:59:00.000Z" />
+    <meta property="article:modified_time" content="2020-05-13T07:49:02.000Z" />
+    <meta property="article:tag" content="Tutorials" />
+    <meta property="article:tag" content="Development" />
+    <meta property="article:tag" content="MESG" />
+    <meta property="article:tag" content="Blockchain" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tutorial: Create your own decentralized network" />
+    <meta name="twitter:description" content="With the latest release of the MESG Engine, you can connect multiple Engines running on different computers together on a network and share services!" />
+    <meta name="twitter:url" content="https://blog.mesg.com/tutorial-create-a-network-with-multiple-engines/" />
+    <meta name="twitter:image" content="https://blog.mesg.com/content/images/2019/11/1_yuz-Kpv0sZHrliwWBpd1qg--1--2.gif" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Nicolas Mahe" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Tutorials, Development, MESG, Blockchain" />
+    <meta name="twitter:site" content="@mesgfoundation" />
+    <meta name="twitter:creator" content="@NicolasMahe" />
+    <meta property="og:image:width" content="1228" />
+    <meta property="og:image:height" content="688" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "MESG",
+        "logo": "https://blog.mesg.com/content/images/2019/11/MESG-logo-purple.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Nicolas Mahe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://blog.mesg.com/content/images/2019/11/MESG-Nicolas.jpg",
+            "width": 360,
+            "height": 360
+        },
+        "url": "https://blog.mesg.com/author/nicolas/",
+        "sameAs": [
+            "https://github.com/NicolasMahe",
+            "https://twitter.com/NicolasMahe"
+        ]
+    },
+    "headline": "Tutorial: Create your own decentralized network",
+    "url": "https://blog.mesg.com/tutorial-create-a-network-with-multiple-engines/",
+    "datePublished": "2019-10-30T02:59:00.000Z",
+    "dateModified": "2020-05-13T07:49:02.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://blog.mesg.com/content/images/2019/11/1_yuz-Kpv0sZHrliwWBpd1qg--1--2.gif",
+        "width": 1228,
+        "height": 688
+    },
+    "keywords": "Tutorials, Development, MESG, Blockchain",
+    "description": "With the latest release of the MESG Engine, you can connect multiple Engines running on different computers together on a network and share services!",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.mesg.com/"
+    }
+}
+    </script>
+
+    
+        <script src="https://js.stripe.com/v3/"></script>
+        <script defer src="../public/members.js%3Fv=37d9c7bd5c"></script>
+    
+    <meta name="generator" content="Ghost 3.1" />
+    <link rel="alternate" type="application/rss+xml" title="MESG" href="../rss/index.html" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117583862-7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117583862-7');
+</script>
+
+<style>
+.subscribe-email {
+	color: var(--midgrey);
+}
+    
+.cta-download {
+	width: 100%;
+}
+    
+.kg-image {
+	border-radius: 6px;
+	border: 1px solid rgba(0,0,0,.15);
+}
+</style>
+
+</head>
+
+<body class="post-template tag-tutorials tag-development tag-mesg tag-blockchain">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWJ4KJV" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="site-wrapper">
+
+        
+
+<header class="site-header">
+    <div class="outer site-nav-main">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left-wrapper">
+        <div class="site-nav-left">
+                <a class="site-nav-logo" href="../index.html"><img src="../content/images/2019/11/MESG-logo-purple.png" alt="MESG" /></a>
+            <div class="site-nav-content">
+                    <ul class="nav" role="menu">
+    <li class="nav-announcements" role="menuitem"><a href="../tag/announcements/index.html">Announcements</a></li>
+    <li class="nav-community" role="menuitem"><a href="../tag/community/index.html">Community</a></li>
+    <li class="nav-tech" role="menuitem"><a href="../tag/tech/index.html">Tech</a></li>
+    <li class="nav-showcase" role="menuitem"><a href="../tag/showcase/index.html">Showcase</a></li>
+    <li class="nav-tutorials" role="menuitem"><a href="../tag/tutorials/index.html">Tutorials</a></li>
+    <li class="nav-mesg-com" role="menuitem"><a href="https://mesg.com/">MESG.com</a></li>
+</ul>
+
+                    <span class="nav-post-title ">Tutorial: Create a network with multiple Engines</span>
+            </div>
+        </div>
+    </div>
+    <div class="site-nav-right">
+            <div class="social-links">
+                    <a class="social-link social-link-tw" href="https://twitter.com/mesgfoundation" title="Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+            </div>
+
+            <a class="subscribe-button" href="index.html#subscribe">Subscribe</a>
+    </div>
+</nav>
+    </div>
+</div></header>
+
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post tag-tutorials tag-development tag-mesg tag-blockchain featured ">
+
+            <header class="post-full-header">
+
+                <section class="post-full-tags">
+                    <a href="../tag/tutorials/index.html">Tutorials</a>
+                </section>
+
+                <h1 class="post-full-title">Tutorial: Create a network with multiple Engines</h1>
+
+                <p class="post-full-custom-excerpt">With the latest release of the MESG Engine, you can connect multiple Engines running on different computers together on a network and share services!</p>
+
+                <div class="post-full-byline">
+
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+                            <li class="author-list-item">
+
+                                <div class="author-card">
+                                    <img class="author-profile-image" src="../content/images/size/w100/2019/11/MESG-Nicolas.jpg"
+                                        alt="Nicolas Mahe" />
+                                    <div class="author-info">
+                                        <div class="bio">
+                                            <h2>Nicolas Mahe</h2>
+                                            <p>CTO, Co-founder @MESG</p>
+                                            <p><a href="../author/nicolas/index.html">More posts</a> by Nicolas Mahe.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a href="../author/nicolas/index.html" class="author-avatar">
+                                    <img class="author-profile-image" src="../content/images/size/w100/2019/11/MESG-Nicolas.jpg"
+                                        alt="Nicolas Mahe" />
+                                </a>
+
+                            </li>
+                        </ul>
+
+                        <section class="post-full-byline-meta">
+                            <h4 class="author-name"><a href="../author/nicolas/index.html">Nicolas Mahe</a></h4>
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date"
+                                    datetime="2019-10-30">30 Oct 2019</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span>
+                                    3 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            <figure class="post-full-image">
+                <img srcset="../content/images/size/w300/2019/11/1_yuz-Kpv0sZHrliwWBpd1qg--1--2.gif 300w,
+                           ../content/images/size/w600/2019/11/1_yuz-Kpv0sZHrliwWBpd1qg--1--2.gif 600w,
+                          ../content/images/size/w1000/2019/11/1_yuz-Kpv0sZHrliwWBpd1qg--1--2.gif 1000w,
+                         ../content/images/size/w2000/2019/11/1_yuz-Kpv0sZHrliwWBpd1qg--1--2.gif 2000w" sizes="(max-width: 800px) 400px,
+                        (max-width: 1170px) 1170px,
+                            2000px" src="../content/images/size/w2000/2019/11/1_yuz-Kpv0sZHrliwWBpd1qg--1--2.gif" alt="Tutorial: Create a network with multiple Engines" />
+            </figure>
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <p>Now that the release <a href="https://forum.mesg.com/t/release-notes-of-engine-v0-16-cli-v2-js-v5/434" rel="noopener nofollow">v0.16</a> of the MESG Engine is available, you can connect multiple Engines running on different computers together on a network and share services!</p><p>Follow this brief guide to learn how to do it.</p><blockquote><em><em>You need to install the latest version of the Engine and CLI by running:</em></em><br><em><em><code>npm install -g mesg-cli</code></em></em><br><em><em>Check out the <a href="https://docs.mesg.com/guide/installation.html" rel="noopener nofollow">installation guide</a> for more information.</em></em></blockquote><h2 id="validators">Validators</h2><p>First of all, at least one Engine needs to be a validator of the network in order to create new blocks that contain the services and maintain the security of the network.</p><p>If you start the Engine on a fresh install (no <code>~/.mesg</code> folder) it will automatically create a network with the Engine as the only validator.</p><h2 id="start-the-validator">Start the validator</h2><p>Execute the following commands to remove any <code>~/.mesg</code> folder, start the Engine and display its logs:</p><pre><code class="language-bash">rm -rf ~/.mesg
+mesg-cli daemon:start
+mesg-cli daemon:logs</code></pre><p>Close to the beginning of the logs, you should see:</p><pre><code class="language-bash">time="2019-10-30T05:17:42Z" level=info msg="This node is a validator" addr=CBD19993A790DD2D5D47BCB606DEF2BE8EA36F0F module=consensus pubKey="PubKeyEd25519{490743F31967911C9338B381FCF4705B1C56B05331AB04DA3B81CA7E4A1AB8D6}"</code></pre><p>Followed by:</p><pre><code class="language-bash">time="2019-10-30T05:17:42Z" level=info msg="P2P Node ID" ID=d6b4fff8981a5b3b3dc1ecd54551a762058fc938 file=/root/.mesg/tendermint/config/node_key.json module=p2p</code></pre><p><strong><strong>⚠️ Copy the node ID as we need it later ⚠️</strong></strong></p><h2 id="genesis-file">Genesis file</h2><p>The Engine is now using a genesis file to start the blockchain. This file is located by default in <code>~/.mesg/tendermint/config/genesis.json</code>. It is generated automatically by the Engine if none exists.<br>To create a network with multiple Engines, you will need to start the Engines with the same genesis file.</p><p>Copy the genesis file to the second computer.</p><h2 id="prepare-config-for-the-second-engine">Prepare config for the second Engine</h2><p>We now have all the info needed to start a new Engine and connect it to the first one.</p><p>Let’s switch to the second computer and set up the second Engine.</p><h2 id="prepare-mesg-folder">Prepare mesg folder</h2><p>We need to create the mesg in advance in order to put 2 files: <code>genesis.json</code> and <code>config.yml</code>.<br>Let’s create it:</p><pre><code class="language-bash">mkdir -p ~/.mesg/tendermint/config</code></pre><h2 id="copy-genesis">Copy genesis</h2><p>Copy the genesis from the first engine to the second:</p><pre><code class="language-bash">scp user@firstComputer:~/.mesg/tendermint/config/genesis.json ~/.mesg/tendermint/config</code></pre><h2 id="create-config-file">Create config file</h2><p>Let’s create a config file for the second Engine to set the address of the first Engine:</p><pre><code class="language-bash">touch ~/.mesg/config.yml
+open ~/.mesg/config.yml</code></pre><p>and in the file, put the following config:</p><pre><code class="language-bash">tendermint:
+  config:    
+    p2p:      
+      persistentpeers: NODE_ID@IP_OF_FIRST_ENGINE:26656</code></pre><p>Make sure to replace <code>NODE_ID</code> with the node ID you get from the logs on the first Engine and replace <code>IP_OF_FIRST_ENGINE</code> with the IP of the first Engine.</p><h2 id="start-the-second-engine">Start the second Engine</h2><p>It’s finally time to start the second Engine! We need to set a different name, path, port and p2p port:</p><pre><code class="language-bash">mesg-cli daemon:start
+mesg-cli daemon:logs</code></pre><p>You should see at the beginning of the logs:</p><pre><code class="language-bash">time="2019-10-30T06:14:22Z" level=info msg="This node is not a validator" addr=D061A71EE4845C93C7F8F77702EFDAEF3DD3150F module=consensus pubKey="PubKeyEd25519{615219C3DED1C0B0F1DBC68E00A23EAE6EBBAFA72D7C0BB122328A17FA1714D2}"</code></pre><p>A lot of <code>Executed block</code> logs until the second node is synchronised with the first one:</p><pre><code class="language-bash">time="2019-10-30T06:16:04Z" level=info msg="Executed block" height=2279 invalidTxs=0 module=state validTxs=0time="2019-10-30T06:16:04Z" level=info msg="Committed state" appHash=04ABB4D7DEB7059D55EDD8D30E5A7B48D26829EB89D283AAB8D4FDE4DDB5843E height=2279 module=state txs=0</code></pre><p>Once synchronized, new logs every second to show the new block:</p><h2 id="create-a-service">Create a service</h2><p>Let’s create a service on the first Engine and display it on the second.</p><p>On the first computer, run:</p><pre><code class="language-bash">mesg-cli service:create "$(mesg-cli service:compile https://github.com/mesg-foundation/service-email-sendgrid)" --account dev --passphrase pass</code></pre><p>Wait for the command to succeed.<br>On the second computer, run:</p><pre><code class="language-bash">mesg-cli service:list</code></pre><p>You should see the <em><em>email-sendgrid</em></em> service in the list 🎊</p><p>Let’s start the service still on the second computer:</p><pre><code class="language-bash">mesg-cli service:start email-sendgrid --env SENDGRID_API_KEY=__CHANGE_WITH_YOUR_SENDGRID_API_KEY__</code></pre><p>Congratulations, you created your first decentralized MESG Service!</p><p>To learn more about MESG and the Engine check out <a href="http://mesg.com/" rel="noopener nofollow">mesg.com</a> and <a href="https://docs.mesg.com/" rel="noopener nofollow">docs.mesg.com</a>.</p>
+                </div>
+            </section>
+
+            <section class="post-full-cta">
+                <a class="mesg-card-cta cta-purple"
+                    href="https://mesg.com/?utm_source=blog.mesg.com&utm_medium=cta&utm_campaign=website_cta"
+                    target="_blank">
+                    <img src="../assets/icons/external-link-icon.svg" alt="External link icon"
+                        class="icon-external-link" />
+                    <div class="icon-bg purple">
+                        <img src="../assets/icons/website-icon.svg" alt="MESG website icon" />
+                    </div>
+                    <div>
+                        <h2>MESG Website</h2>
+                        <p>Learn more about MESG</p>
+                    </div>
+                </a>
+                <a class="mesg-card-cta cta-blue"
+                    href="https://docs.mesg.com/?utm_source=blog.mesg.com&utm_medium=cta&utm_campaign=doc_cta"
+                    target="_blank">
+                    <img src="../assets/icons/external-link-icon.svg" alt="External link icon"
+                        class="icon-external-link" />
+                    <div class="icon-bg blue">
+                        <img src="../assets/icons/doc-icon.svg" alt="Documentation icon" />
+                    </div>
+                    <div>
+                        <h2>Documentation</h2>
+                        <p>Explore the tech & get started</p>
+                    </div>
+                </a>
+            </section>
+
+            <section class="post-full-follow">
+                <div class="follow-social">
+                    <h3>Community</h3>
+                    <p>Join us in building the bridges between legacy and emerging technologies.</p>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="https://github.com/mesg-foundation/" target="_blank">
+                                    <img src="../assets/icons/social/github.svg" alt="Github icon" /></a>
+                            </li>
+                            <li>
+                                <a href="https://forum.mesg.com/" target="_blank">
+                                    <img src="../assets/icons/social/forum.svg" alt="Forum icon" /></a>
+                            </li>
+                            <li>
+                                <a href="http://discord.mesg.com/" target="_blank">
+                                    <img src="../assets/icons/social/discord.svg" alt="Discord icon" /></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/mesgfoundation" target="_blank">
+                                    <img src="../assets/icons/social/twitter.svg" alt="Twitter icon" /></a>
+                            </li>
+                            <li>
+                                <a href="https://t.me/mesg_community" target="_blank">
+                                    <img src="../assets/icons/social/telegram.svg" alt="Telegram icon" /></a>
+                            </li>
+                            <li>
+                                <a href="http://links.mesg.com/baykBK" target="_blank">
+                                    <img src="../assets/icons/social/more.svg" alt="More icon" /></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <section class="subscribe-form">
+    <h3 class="subscribe-form-title">Subscribe to MESG</h3>
+    <p class="subscribe-form-description">Get the latest posts delivered right to your inbox</p>
+    <form data-members-form="subscribe">
+        <div class="form-group">
+            <input class="subscribe-email" data-members-email placeholder="youremail@example.com" autocomplete="false" />
+            <button class="button primary" type="submit">
+                <span class="button-content">Subscribe</span>
+                <span class="button-loader"><svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+    y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+    <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z" />
+    <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+C22.32,8.481,24.301,9.057,26.013,10.047z">
+        <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20"
+            dur="0.5s" repeatCount="indefinite" />
+    </path>
+</svg></span>
+            </button>
+        </div>
+        <div class="message-success">
+            <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
+        </div>
+        <div class="message-error">
+            Please enter a valid email address!
+        </div>
+    </form>
+</section>            </section>
+
+
+            <section class="post-full-comments">
+                <div id='discourse-comments'></div>
+
+                <script type="text/javascript">
+                    DiscourseEmbed = {
+                        discourseUrl: 'https://forum.mesg.com/',
+                        discourseEmbedUrl: 'https://blog.mesg.com/tutorial-create-a-network-with-multiple-engines/'
+                    };
+
+                    (function () {
+                        var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+                        d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+                    })();
+                </script>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            <article class="read-next-card">
+                <header class="read-next-card-header">
+                    <h3><span>More in</span> <a href="../tag/tutorials/index.html">Tutorials</a></h3>
+                </header>
+                <div class="read-next-card-content">
+                    <ul>
+                        <li>
+                            <h4><a href="../migrate-your-application-to-liteflow/index.html">Migrate your applications to Liteflow</a></h4>
+                            <div class="read-next-card-meta">
+                                <p><time datetime="2020-05-08">8 May 2020</time> –
+                                    2 min read</p>
+                            </div>
+                        </li>
+                        <li>
+                            <h4><a href="../introduction-to-mesg-chapter-0-1/index.html">Introduction to MESG — Chapter 0/1</a></h4>
+                            <div class="read-next-card-meta">
+                                <p><time datetime="2018-12-16">16 Dec 2018</time> –
+                                    6 min read</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <footer class="read-next-card-footer">
+                    <a href="../tag/tutorials/index.html">See all 2 posts
+                        →</a>
+                </footer>
+            </article>
+
+            <article class="post-card post tag-product tag-tech tag-release-notes tag-mesg ">
+
+    <a class="post-card-image-link" href="../mesg-product-update-october-19/index.html">
+        <img class="post-card-image"
+            srcset="../content/images/size/w300/2019/11/MESG-Header-Illustrations-8.jpg 300w,
+                   ../content/images/size/w600/2019/11/MESG-Header-Illustrations-8.jpg 600w,
+                  ../content/images/size/w1000/2019/11/MESG-Header-Illustrations-8.jpg 1000w,
+                 ../content/images/size/w2000/2019/11/MESG-Header-Illustrations-8.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            src="../content/images/size/w600/2019/11/MESG-Header-Illustrations-8.jpg"
+            alt="Product Update - October &#x27;19"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="../mesg-product-update-october-19/index.html">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Product</div>
+                <h2 class="post-card-title">Product Update - October &#x27;19</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>Our newest Engine update uses Cosmos and Tendermint to replicate the services across multiple Engines using a state machine built on a blockchain!</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Nicolas Mahe
+                    </div>
+            
+                    <a href="../author/nicolas/index.html" class="static-avatar">
+                        <img class="author-profile-image" src="../content/images/size/w100/2019/11/MESG-Nicolas.jpg" alt="Nicolas Mahe" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="../author/nicolas/index.html">Nicolas Mahe</a></span>
+                <span class="post-card-byline-date"><time datetime="2019-10-31">31 Oct 2019</time> <span class="bull">&bull;</span> 2 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+            <article class="post-card post tag-community ">
+
+    <a class="post-card-image-link" href="../bi-weekly-news-24-10-19/index.html">
+        <img class="post-card-image"
+            srcset="../content/images/size/w300/2019/11/1_Dp7WfrdQ47x_VOA254R5JA-1.jpeg 300w,
+                   ../content/images/size/w600/2019/11/1_Dp7WfrdQ47x_VOA254R5JA-1.jpeg 600w,
+                  ../content/images/size/w1000/2019/11/1_Dp7WfrdQ47x_VOA254R5JA-1.jpeg 1000w,
+                 ../content/images/size/w2000/2019/11/1_Dp7WfrdQ47x_VOA254R5JA-1.jpeg 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            src="../content/images/size/w600/2019/11/1_Dp7WfrdQ47x_VOA254R5JA-1.jpeg"
+            alt="Community Update - Late October &#x27;19"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="../bi-weekly-news-24-10-19/index.html">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Community</div>
+                <h2 class="post-card-title">Community Update - Late October &#x27;19</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>The MESG Foundation had some big developments on the Network this week, plus we're starting work on grant platforms, and made more progress on building ERC-721 inventories for partner BeachHead's VR world.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        MESG
+                    </div>
+            
+                    <a href="../author/mesg/index.html" class="static-avatar">
+                        <img class="author-profile-image" src="../content/images/size/w100/2019/11/MESG-brandmark-purple-800X800-2.png" alt="MESG" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="../author/mesg/index.html">MESG</a></span>
+                <span class="post-card-byline-date"><time datetime="2019-10-24">24 Oct 2019</time> <span class="bull">&bull;</span> 1 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+        </div>
+    </div>
+</aside>
+
+
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="../index.html">MESG</a> &copy; 2020
+                </section>
+                <nav class="site-footer-nav">
+                    <a href="../index.html">Latest Posts</a>
+                    
+                    <a href="https://twitter.com/mesgfoundation" target="_blank"
+                        rel="noopener">Twitter</a>
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <div class="subscribe-success-message">
+        <a class="subscribe-close" href="javascript:;"></a>
+        You've successfully subscribed to MESG!
+    </div>
+
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-close" href="index.html#"></a>
+        <div class="subscribe-overlay-content">
+            <img class="subscribe-overlay-logo" src="../content/images/2019/11/MESG-logo-purple.png" alt="MESG" />
+            <div class="subscribe-form">
+                <h1 class="subscribe-overlay-title">Subscribe to MESG</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered
+                    straight to your inbox</p>
+                <form data-members-form="subscribe">
+                    <div class="form-group">
+                        <input class="subscribe-email" data-members-email placeholder="youremail@example.com"
+                            autocomplete="false" />
+                        <button class="button primary" type="submit">
+                            <span class="button-content">Subscribe</span>
+                            <span class="button-loader"><svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+    y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+    <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z" />
+    <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+C22.32,8.481,24.301,9.057,26.013,10.047z">
+        <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20"
+            dur="0.5s" repeatCount="indefinite" />
+    </path>
+</svg></span>
+                        </button>
+                    </div>
+                    <div class="message-success">
+                        <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
+                    </div>
+                    <div class="message-error">
+                        Please enter a valid email address!
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+    <script src="../assets/built/casper.js%3Fv=37d9c7bd5c"></script>
+
+    <script>
+        // Parse the URL parameter
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Give the parameter a variable name
+        var action = getParameterByName('action');
+
+        $(document).ready(function () {
+            if (action == 'subscribe') {
+                $('body').addClass("subscribe-success");
+            }
+
+            $('.subscribe-success-message .subscribe-close').click(function () {
+                $('.subscribe-success-message').addClass('close');
+            });
+
+            // Reset form on opening subscrion overlay
+            $('.subscribe-button').click(function () {
+                $('.subscribe-overlay form').removeClass();
+                $('.subscribe-email').val('');
+            });
+        });
+    </script>
+
+    <script>
+    $(document).ready(function () {
+        // FitVids - start
+        var $postContent = $(".post-full-content");
+        $postContent.fitVids();
+        // FitVids - end
+
+        // Replace nav with title on scroll - start
+        Casper.stickyNavTitle({
+            navSelector: '.site-nav-main',
+            titleSelector: '.post-full-title',
+            activeClass: 'nav-post-title-active'
+        });
+        // Replace nav with title on scroll - end
+
+        // Hover on avatar
+        var hoverTimeout;
+        $('.author-list-item').hover(function () {
+            var $this = $(this);
+
+            clearTimeout(hoverTimeout);
+
+            $('.author-card').removeClass('hovered');
+            $(this).children('.author-card').addClass('hovered');
+
+        }, function () {
+            var $this = $(this);
+
+            hoverTimeout = setTimeout(function () {
+                $this.children('.author-card').removeClass('hovered');
+            }, 800);
+        });
+    });
+</script>
+
+
+    
+
+</body>
+
+</html>

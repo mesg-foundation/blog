@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Element/Icon/Social/Telegram/Background</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Element/Icon/Social/Telegram/Background" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-5" transform="translate(-0.000000, 0.000000)" fill="#0088CC">
+            <g id="Element/Circle/Fill" opacity="0.1">
+                <circle id="Oval" cx="25" cy="25" r="25"></circle>
+            </g>
+            <g id="Element/Icon/Social/Telegram/Original" transform="translate(15.967413, 16.000000)">
+                <path d="M17.9487125,2.37422907 L15.2323769,15.1843237 C15.0274638,16.0884217 14.4930493,16.3134259 13.7335913,15.887511 L9.59483183,12.8376716 L7.59777209,14.7583696 C7.37677037,14.9793713 7.19194826,15.1642327 6.76603337,15.1642327 L7.0633576,10.9491115 L14.734142,4.01769391 C15.0676459,3.72033045 14.6618221,3.55559941 14.2157769,3.85296287 L4.73279402,9.8240118 L0.65030523,8.54622789 C-0.237743403,8.26895549 -0.253792711,7.65817926 0.835127335,7.23226437 L16.8035218,1.08039585 C17.5428494,0.803123452 18.1898053,1.24512689 17.9487125,2.37422907 Z" id=""></path>
+            </g>
+        </g>
+    </g>
+</svg>

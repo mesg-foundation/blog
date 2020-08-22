@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWJ4KJV');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Migrate your applications to Liteflow</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css%3Fv=37d9c7bd5c.css" />
+
+    <meta name="description" content="Migrate you MESG application into a Liteflow application in just a few steps and get all the benefits of Liteflow now." />
+    <link rel="shortcut icon" href="../favicon.png" type="image/png" />
+    <link rel="canonical" href="index.html" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="amp/index.html" />
+    
+    <meta property="og:site_name" content="MESG" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Migrate your applications to Liteflow" />
+    <meta property="og:description" content="Migrate your MESG application into a Liteflow application in just a few steps and get all the benefits of Liteflow now." />
+    <meta property="og:url" content="https://blog.mesg.com/migrate-your-application-to-liteflow/" />
+    <meta property="og:image" content="https://blog.mesg.com/content/images/2020/05/MESG-application-migration-liteflow-1.jpg" />
+    <meta property="article:published_time" content="2020-05-08T03:30:48.000Z" />
+    <meta property="article:modified_time" content="2020-08-10T11:11:32.000Z" />
+    <meta property="article:tag" content="Tutorials" />
+    <meta property="article:tag" content="Development" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Migrate your applications to Liteflow" />
+    <meta name="twitter:description" content="In this step-by-step tutorial, migrate any MESG application to a new Liteflow application, and get all the benefits of Liteflow now." />
+    <meta name="twitter:url" content="https://blog.mesg.com/migrate-your-application-to-liteflow/" />
+    <meta name="twitter:image" content="https://blog.mesg.com/content/images/2020/05/MESG-application-migration-liteflow-1.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Anthony Estebe" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Tutorials, Development" />
+    <meta name="twitter:site" content="@mesgfoundation" />
+    <meta property="og:image:width" content="1228" />
+    <meta property="og:image:height" content="688" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "MESG",
+        "logo": "https://blog.mesg.com/content/images/2019/11/MESG-logo-purple.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Anthony Estebe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/d893d08e6e4d902e2c391efc3a199090?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://blog.mesg.com/author/anthony/",
+        "sameAs": []
+    },
+    "headline": "Migrate your applications to Liteflow",
+    "url": "https://blog.mesg.com/migrate-your-application-to-liteflow/",
+    "datePublished": "2020-05-08T03:30:48.000Z",
+    "dateModified": "2020-08-10T11:11:32.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://blog.mesg.com/content/images/2020/05/MESG-application-migration-liteflow-1.jpg",
+        "width": 1228,
+        "height": 688
+    },
+    "keywords": "Tutorials, Development",
+    "description": "Migrate your MESG application into a Liteflow application in just a few steps and get all the benefits of Liteflow now.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.mesg.com/"
+    }
+}
+    </script>
+
+    
+        <script src="https://js.stripe.com/v3/"></script>
+        <script defer src="../public/members.js%3Fv=37d9c7bd5c"></script>
+    
+    <meta name="generator" content="Ghost 3.1" />
+    <link rel="alternate" type="application/rss+xml" title="MESG" href="../rss/index.html" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117583862-7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117583862-7');
+</script>
+
+<style>
+.subscribe-email {
+	color: var(--midgrey);
+}
+    
+.cta-download {
+	width: 100%;
+}
+    
+.kg-image {
+	border-radius: 6px;
+	border: 1px solid rgba(0,0,0,.15);
+}
+</style>
+
+</head>
+
+<body class="post-template tag-tutorials tag-development">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWJ4KJV" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="site-wrapper">
+
+        
+
+<header class="site-header">
+    <div class="outer site-nav-main">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left-wrapper">
+        <div class="site-nav-left">
+                <a class="site-nav-logo" href="../index.html"><img src="../content/images/2019/11/MESG-logo-purple.png" alt="MESG" /></a>
+            <div class="site-nav-content">
+                    <ul class="nav" role="menu">
+    <li class="nav-announcements" role="menuitem"><a href="../tag/announcements/index.html">Announcements</a></li>
+    <li class="nav-community" role="menuitem"><a href="../tag/community/index.html">Community</a></li>
+    <li class="nav-tech" role="menuitem"><a href="../tag/tech/index.html">Tech</a></li>
+    <li class="nav-showcase" role="menuitem"><a href="../tag/showcase/index.html">Showcase</a></li>
+    <li class="nav-tutorials" role="menuitem"><a href="../tag/tutorials/index.html">Tutorials</a></li>
+    <li class="nav-mesg-com" role="menuitem"><a href="https://mesg.com/">MESG.com</a></li>
+</ul>
+
+                    <span class="nav-post-title ">Migrate your applications to Liteflow</span>
+            </div>
+        </div>
+    </div>
+    <div class="site-nav-right">
+            <div class="social-links">
+                    <a class="social-link social-link-tw" href="https://twitter.com/mesgfoundation" title="Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+            </div>
+
+            <a class="subscribe-button" href="index.html#subscribe">Subscribe</a>
+    </div>
+</nav>
+    </div>
+</div></header>
+
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post tag-tutorials tag-development ">
+
+            <header class="post-full-header">
+
+                <section class="post-full-tags">
+                    <a href="../tag/tutorials/index.html">Tutorials</a>
+                </section>
+
+                <h1 class="post-full-title">Migrate your applications to Liteflow</h1>
+
+                <p class="post-full-custom-excerpt">Migrate your MESG application into a Liteflow application in just a few steps and get all the benefits of Liteflow now.</p>
+
+                <div class="post-full-byline">
+
+                    <section class="post-full-byline-content">
+
+                        <ul class="author-list">
+                            <li class="author-list-item">
+
+                                <div class="author-card">
+                                    <img class="author-profile-image" src="https://www.gravatar.com/avatar/d893d08e6e4d902e2c391efc3a199090?s=250&amp;d=mm&amp;r=x"
+                                        alt="Anthony Estebe" />
+                                    <div class="author-info">
+                                        <h2>Anthony Estebe</h2>
+                                        <p>Read <a href="../author/anthony/index.html">more posts</a> by this author.</p>
+                                    </div>
+                                </div>
+
+                                <a href="../author/anthony/index.html" class="author-avatar">
+                                    <img class="author-profile-image" src="https://www.gravatar.com/avatar/d893d08e6e4d902e2c391efc3a199090?s=250&amp;d=mm&amp;r=x"
+                                        alt="Anthony Estebe" />
+                                </a>
+
+                            </li>
+                        </ul>
+
+                        <section class="post-full-byline-meta">
+                            <h4 class="author-name"><a href="../author/anthony/index.html">Anthony Estebe</a></h4>
+                            <div class="byline-meta-content">
+                                <time class="byline-meta-date"
+                                    datetime="2020-05-08">8 May 2020</time>
+                                <span class="byline-reading-time"><span class="bull">&bull;</span>
+                                    2 min read</span>
+                            </div>
+                        </section>
+
+                    </section>
+
+
+                </div>
+            </header>
+
+            <figure class="post-full-image">
+                <img srcset="../content/images/size/w300/2020/05/MESG-application-migration-liteflow-1.jpg 300w,
+                           ../content/images/size/w600/2020/05/MESG-application-migration-liteflow-1.jpg 600w,
+                          ../content/images/size/w1000/2020/05/MESG-application-migration-liteflow-1.jpg 1000w,
+                         ../content/images/size/w2000/2020/05/MESG-application-migration-liteflow-1.jpg 2000w" sizes="(max-width: 800px) 400px,
+                        (max-width: 1170px) 1170px,
+                            2000px" src="../content/images/size/w2000/2020/05/MESG-application-migration-liteflow-1.jpg" alt="Migrate your applications to Liteflow" />
+            </figure>
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <p>With <a href="https://blog.mesg.com/why-did-we-build-liteflow/">Liteflow</a>, the current ecosystem of MESG has changed, and your application is slightly different, but that’s for the best.</p><p>This article is a step-by-step guide on how to migrate your MESG application to Liteflow.</p><h2 id="new-cli">New CLI</h2><p>Liteflow has a new CLI that is quite similar to the MESG CLI that you can install with:</p><pre><code class="language-bash">npm install -g @liteflow/cli</code></pre><h2 id="service-migration">Service migration</h2><p>Services now rely on a new library <code>@liteflow/service</code>. This library has changed internally, but the API stays the same, so you shouldn't have any issue in your service.</p><pre><code class="language-bash">npm remove @mesg/service
+npm install @liteflow/service</code></pre><p>Replace in the code of your service all require to the <code>@mesg/service</code> with the new one <code>@liteflow/service</code>, and your service is ready to go.</p><h2 id="the-liteflow-framework">The Liteflow framework</h2><p>We introduced a new way to organize your applications.</p><p>You can now group processes/services in the same directory and run everything with a unique command saving a lot of time and letting you easily test multiple processes and services at the same time.</p><p>You can create such an application with:</p><pre><code class="language-bash">liteflow init</code></pre><p>And run your application with:</p><pre><code class="language-bash">liteflow dev</code></pre><p>A local development environment will be automatically started and stopped on your local computer. You can now use only one terminal and forget about the daemon commands.</p><p>Thanks to the Liteflow framework, you can now more easily create sophisticated applications that rely on multiple processes.</p><p>More details on the new <a href="https://docs.liteflow.com/">Liteflow documentation</a> (<a href="https://docs.liteflow.com/">https://docs.liteflow.com/</a>).</p><h2 id="deployment-of-your-application">Deployment of your application</h2><p>Deploying an application with MESG was complicated and only limited to a public testnet. This process really time-consuming as you had to:</p><ul><li>Generate an address from a mnemonic</li><li>Get some tokens from the <a href="https://explorer.testnet.mesg.com/faucet">MESG Testnet faucet</a> — WTF is a faucet? 🚰</li><li>Configure your local engine to connect to the MESG Testnet — Good luck with that one... <a href="https://github.com/mesg-foundation/networks">https://github.com/mesg-foundation/networks</a> 🤯</li><li>Wait to synchronize the testnet — Do you have a few days? 🥱</li><li>Finally, publish your services and processes with the same commands that you used for your development — Wait... what? But am I still developing or pushing that in prod? 🤨</li><li>Wait, not entirely done... All your services and processes are deployed, but good luck remember which one belongs to which application — A spreadsheet would do the work 😅</li></ul><p>This flow was really complicated and confusing, especially for developers that have no experience with blockchain. With Liteflow, your deployment is much simpler and way faster:</p><ul><li>Use the command <code>liteflow deploy</code> — The previously first five steps are just one now. 🥳</li><li>Choose or create the project you want — Clear organization of your applications. 🤩</li><li>Your application is now running on a production environment with free credits — In just a few seconds your services and processes are deployed and started. 😍</li></ul><p><strong>Bonus</strong>: You can manage your application directly through the console at <a href="https://console.liteflow.com">console.liteflow.com</a>.</p><hr><p>Feel free to deploy amazing applications on <a href="https://liteflow.com/?utm_source=mesg_blog&amp;utm_medium=blog_post&amp;utm_campaign=migrate">Liteflow</a>.</p>
+                </div>
+            </section>
+
+            <section class="post-full-cta">
+                <a class="mesg-card-cta cta-purple"
+                    href="https://mesg.com/?utm_source=blog.mesg.com&utm_medium=cta&utm_campaign=website_cta"
+                    target="_blank">
+                    <img src="../assets/icons/external-link-icon.svg" alt="External link icon"
+                        class="icon-external-link" />
+                    <div class="icon-bg purple">
+                        <img src="../assets/icons/website-icon.svg" alt="MESG website icon" />
+                    </div>
+                    <div>
+                        <h2>MESG Website</h2>
+                        <p>Learn more about MESG</p>
+                    </div>
+                </a>
+                <a class="mesg-card-cta cta-blue"
+                    href="https://docs.mesg.com/?utm_source=blog.mesg.com&utm_medium=cta&utm_campaign=doc_cta"
+                    target="_blank">
+                    <img src="../assets/icons/external-link-icon.svg" alt="External link icon"
+                        class="icon-external-link" />
+                    <div class="icon-bg blue">
+                        <img src="../assets/icons/doc-icon.svg" alt="Documentation icon" />
+                    </div>
+                    <div>
+                        <h2>Documentation</h2>
+                        <p>Explore the tech & get started</p>
+                    </div>
+                </a>
+            </section>
+
+            <section class="post-full-follow">
+                <div class="follow-social">
+                    <h3>Community</h3>
+                    <p>Join us in building the bridges between legacy and emerging technologies.</p>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="https://github.com/mesg-foundation/" target="_blank">
+                                    <img src="../assets/icons/social/github.svg" alt="Github icon" /></a>
+                            </li>
+                            <li>
+                                <a href="https://forum.mesg.com/" target="_blank">
+                                    <img src="../assets/icons/social/forum.svg" alt="Forum icon" /></a>
+                            </li>
+                            <li>
+                                <a href="http://discord.mesg.com/" target="_blank">
+                                    <img src="../assets/icons/social/discord.svg" alt="Discord icon" /></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/mesgfoundation" target="_blank">
+                                    <img src="../assets/icons/social/twitter.svg" alt="Twitter icon" /></a>
+                            </li>
+                            <li>
+                                <a href="https://t.me/mesg_community" target="_blank">
+                                    <img src="../assets/icons/social/telegram.svg" alt="Telegram icon" /></a>
+                            </li>
+                            <li>
+                                <a href="http://links.mesg.com/baykBK" target="_blank">
+                                    <img src="../assets/icons/social/more.svg" alt="More icon" /></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <section class="subscribe-form">
+    <h3 class="subscribe-form-title">Subscribe to MESG</h3>
+    <p class="subscribe-form-description">Get the latest posts delivered right to your inbox</p>
+    <form data-members-form="subscribe">
+        <div class="form-group">
+            <input class="subscribe-email" data-members-email placeholder="youremail@example.com" autocomplete="false" />
+            <button class="button primary" type="submit">
+                <span class="button-content">Subscribe</span>
+                <span class="button-loader"><svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+    y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+    <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z" />
+    <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+C22.32,8.481,24.301,9.057,26.013,10.047z">
+        <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20"
+            dur="0.5s" repeatCount="indefinite" />
+    </path>
+</svg></span>
+            </button>
+        </div>
+        <div class="message-success">
+            <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
+        </div>
+        <div class="message-error">
+            Please enter a valid email address!
+        </div>
+    </form>
+</section>            </section>
+
+
+            <section class="post-full-comments">
+                <div id='discourse-comments'></div>
+
+                <script type="text/javascript">
+                    DiscourseEmbed = {
+                        discourseUrl: 'https://forum.mesg.com/',
+                        discourseEmbedUrl: 'https://blog.mesg.com/migrate-your-application-to-liteflow/'
+                    };
+
+                    (function () {
+                        var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+                        d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+                    })();
+                </script>
+            </section>
+
+        </article>
+
+    </div>
+</main>
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            <article class="read-next-card">
+                <header class="read-next-card-header">
+                    <h3><span>More in</span> <a href="../tag/tutorials/index.html">Tutorials</a></h3>
+                </header>
+                <div class="read-next-card-content">
+                    <ul>
+                        <li>
+                            <h4><a href="../tutorial-create-a-network-with-multiple-engines/index.html">Tutorial: Create a network with multiple Engines</a></h4>
+                            <div class="read-next-card-meta">
+                                <p><time datetime="2019-10-30">30 Oct 2019</time> –
+                                    3 min read</p>
+                            </div>
+                        </li>
+                        <li>
+                            <h4><a href="../introduction-to-mesg-chapter-0-1/index.html">Introduction to MESG — Chapter 0/1</a></h4>
+                            <div class="read-next-card-meta">
+                                <p><time datetime="2018-12-16">16 Dec 2018</time> –
+                                    6 min read</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <footer class="read-next-card-footer">
+                    <a href="../tag/tutorials/index.html">See all 2 posts
+                        →</a>
+                </footer>
+            </article>
+
+            <article class="post-card post tag-community ">
+
+    <a class="post-card-image-link" href="../community-update-april-may-2020/index.html">
+        <img class="post-card-image"
+            srcset="../content/images/size/w300/2020/06/MESG-Header-Illustrations-9.jpg 300w,
+                   ../content/images/size/w600/2020/06/MESG-Header-Illustrations-9.jpg 600w,
+                  ../content/images/size/w1000/2020/06/MESG-Header-Illustrations-9.jpg 1000w,
+                 ../content/images/size/w2000/2020/06/MESG-Header-Illustrations-9.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            src="../content/images/size/w600/2020/06/MESG-Header-Illustrations-9.jpg"
+            alt="Community Update: April &amp; May 2020"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="../community-update-april-may-2020/index.html">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Community</div>
+                <h2 class="post-card-title">Community Update: April &amp; May 2020</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>Launch of Liteflow, reorganization of the different libraries, MESG Token delisting and new Engine architecture.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        MESG
+                    </div>
+            
+                    <a href="../author/mesg/index.html" class="static-avatar">
+                        <img class="author-profile-image" src="../content/images/size/w100/2019/11/MESG-brandmark-purple-800X800-2.png" alt="MESG" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="../author/mesg/index.html">MESG</a></span>
+                <span class="post-card-byline-date"><time datetime="2020-06-03">3 Jun 2020</time> <span class="bull">&bull;</span> 1 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+            <article class="post-card post tag-announcements tag-token ">
+
+    <a class="post-card-image-link" href="../a-new-era-for-the-mesg-token/index.html">
+        <img class="post-card-image"
+            srcset="../content/images/size/w300/2020/05/MESG-Header-Illustrations.jpg 300w,
+                   ../content/images/size/w600/2020/05/MESG-Header-Illustrations.jpg 600w,
+                  ../content/images/size/w1000/2020/05/MESG-Header-Illustrations.jpg 1000w,
+                 ../content/images/size/w2000/2020/05/MESG-Header-Illustrations.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            src="../content/images/size/w600/2020/05/MESG-Header-Illustrations.jpg"
+            alt="A new era for the MESG Token"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="../a-new-era-for-the-mesg-token/index.html">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Announcements</div>
+                <h2 class="post-card-title">A new era for the MESG Token</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>What will happen to the MESG Token and what you can do to continue helping the MESG vision and development with the launch of Liteflow.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Anthony Estebe
+                    </div>
+            
+                    <a href="../author/anthony/index.html" class="static-avatar">
+                        <img class="author-profile-image" src="https://www.gravatar.com/avatar/d893d08e6e4d902e2c391efc3a199090?s=250&amp;d=mm&amp;r=x" alt="Anthony Estebe" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="../author/anthony/index.html">Anthony Estebe</a></span>
+                <span class="post-card-byline-date"><time datetime="2020-05-01">1 May 2020</time> <span class="bull">&bull;</span> 1 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+        </div>
+    </div>
+</aside>
+
+
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="../index.html">MESG</a> &copy; 2020
+                </section>
+                <nav class="site-footer-nav">
+                    <a href="../index.html">Latest Posts</a>
+                    
+                    <a href="https://twitter.com/mesgfoundation" target="_blank"
+                        rel="noopener">Twitter</a>
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <div class="subscribe-success-message">
+        <a class="subscribe-close" href="javascript:;"></a>
+        You've successfully subscribed to MESG!
+    </div>
+
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-close" href="index.html#"></a>
+        <div class="subscribe-overlay-content">
+            <img class="subscribe-overlay-logo" src="../content/images/2019/11/MESG-logo-purple.png" alt="MESG" />
+            <div class="subscribe-form">
+                <h1 class="subscribe-overlay-title">Subscribe to MESG</h1>
+                <p class="subscribe-overlay-description">Stay up to date! Get all the latest & greatest posts delivered
+                    straight to your inbox</p>
+                <form data-members-form="subscribe">
+                    <div class="form-group">
+                        <input class="subscribe-email" data-members-email placeholder="youremail@example.com"
+                            autocomplete="false" />
+                        <button class="button primary" type="submit">
+                            <span class="button-content">Subscribe</span>
+                            <span class="button-loader"><svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+    y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+    <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z" />
+    <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+C22.32,8.481,24.301,9.057,26.013,10.047z">
+        <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20"
+            dur="0.5s" repeatCount="indefinite" />
+    </path>
+</svg></span>
+                        </button>
+                    </div>
+                    <div class="message-success">
+                        <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
+                    </div>
+                    <div class="message-error">
+                        Please enter a valid email address!
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+    <script src="../assets/built/casper.js%3Fv=37d9c7bd5c"></script>
+
+    <script>
+        // Parse the URL parameter
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Give the parameter a variable name
+        var action = getParameterByName('action');
+
+        $(document).ready(function () {
+            if (action == 'subscribe') {
+                $('body').addClass("subscribe-success");
+            }
+
+            $('.subscribe-success-message .subscribe-close').click(function () {
+                $('.subscribe-success-message').addClass('close');
+            });
+
+            // Reset form on opening subscrion overlay
+            $('.subscribe-button').click(function () {
+                $('.subscribe-overlay form').removeClass();
+                $('.subscribe-email').val('');
+            });
+        });
+    </script>
+
+    <script>
+    $(document).ready(function () {
+        // FitVids - start
+        var $postContent = $(".post-full-content");
+        $postContent.fitVids();
+        // FitVids - end
+
+        // Replace nav with title on scroll - start
+        Casper.stickyNavTitle({
+            navSelector: '.site-nav-main',
+            titleSelector: '.post-full-title',
+            activeClass: 'nav-post-title-active'
+        });
+        // Replace nav with title on scroll - end
+
+        // Hover on avatar
+        var hoverTimeout;
+        $('.author-list-item').hover(function () {
+            var $this = $(this);
+
+            clearTimeout(hoverTimeout);
+
+            $('.author-card').removeClass('hovered');
+            $(this).children('.author-card').addClass('hovered');
+
+        }, function () {
+            var $this = $(this);
+
+            hoverTimeout = setTimeout(function () {
+                $this.children('.author-card').removeClass('hovered');
+            }, 800);
+        });
+    });
+</script>
+
+
+    
+
+</body>
+
+</html>
